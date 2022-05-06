@@ -85,7 +85,7 @@ class SearchBox extends Base {
 
 		// Render choices or answer depending on the state
 		if (this.status === "answered") {
-			message += chalk.cyan(this.selected ? this.selected : '');
+			message += chalk.cyan(this.selected ? this.getCurrentItemName() : '');
 		} else {
 			message += `${tip} ${this.rl.line}`;
 			const choicesStr = renderChoices(this.renderRow, this.filterList, this.pointer);
